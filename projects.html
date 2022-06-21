@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://api-ssps.cajthaml.eu/file/global/css/reset_ld9mrCCm.css">
+    <title>My Projects</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Arial', 'sans-serif';
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #131313;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 1.2em;
+            position: fixed;
+            top: 0px;
+            z-index: 100;
+        }
+
+        .navbar > .navbar__main {
+            display: flex;
+            justify-content: flex-start;
+            z-index: 1000;
+            width: 30%;
+            height: 80px;
+            padding: 0 50px;
+        }
+        
+        #navbar__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        #navbar__logo .shelter{
+            width: 0px;
+            height: 0px;
+
+            border-right: 20px solid transparent;
+            border-bottom: 20px #c0392b solid;
+            border-left: 20px solid transparent;
+        }
+
+        #navbar__logo .home{
+            width: 30px;
+            height: 20px;
+            background: #c0392b;
+        }
+
+        .navbar__menu {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            justify-content: center;
+            list-style: none;
+            text-align: center;
+            height: 80px;
+            transition: all 0.4s ease;
+        }
+
+        .navbar__item {
+            height: 100%;
+        }
+
+        .navbar__ref {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'calibri', sans-serif;
+            text-decoration: none;
+            padding: 0 1rem;
+            height: 100%;
+            font-weight: 900;
+        }
+
+        .modeButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5%;
+            height: 60px;
+            background:#3d3d3d;
+            color: black;
+            font-family: calibri, sans-serif;
+            border-radius: 4px;
+            margin: 0 10px 0 100px;
+            cursor: pointer;
+            transition: all 0.6s ease;
+        }
+
+        /*-----------------------MAIN--------------------------------*/
+        main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("images/project.jpg");
+            background-size: cover;
+            background-position: left;
+        }
+
+        .info{
+            display: flex;
+            width: 50%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .caption{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 80%;
+            height: 15%;
+            color: #44bd32;
+            font-family: 'Arial', sans-serif;
+            font-size: 6em;
+            font-weight: 700;
+            margin-left: 4rem;
+        }
+        .text{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 70%;
+            height: 9%;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            font-size: 1em;
+            font-weight: 700;
+            margin-left: 4rem;
+        }
+
+        .projects{
+            display: flex;
+            width: 50%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .projects__container{
+            display: grid;
+            width: 80%;
+            height: 70%;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 6rem;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            border-radius: 10px;
+            font-family: 'Arial', sans-serif;
+            transition: all 0.2s ease-in-out;
+            border: 4px solid black;
+        }
+        .n1{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("images/projectcard2.jpg");
+            background-size: cover;
+            background-position: left;
+        }
+        .n2{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("images/projectcard3.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        .n3{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("images/projectcard.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        .n4{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("images/projectcard5.jpg");
+            background-size: cover;
+            background-position: left;
+        }
+        .card__caption{
+            width: 100%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            font-weight: 700;
+        }
+        .card__separator{
+            width: 100%;
+            height: 2%;
+            background-color: black;
+        }
+        .card__text{
+            padding: 1rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-weight: 700;
+        }
+        /*--------------HOVER-----------*/
+        .modeButton:hover {
+            background-color: #1e272e;
+            color: #3d3d3d;
+        }
+        .navbar__ref:hover {
+            color: #c0392b;
+            transition: all 1sec ease;
+            border-bottom: 4px solid #c0392b;
+        }
+        #navbar__logo:hover{
+            transform: scale(1.3,1.3);
+        }
+        .card:hover{
+            transform: scale(1.05);
+        }
+
+
+
+        @media only screen and (max-width: 960px){
+            .navbar > .navbar__main {
+                display: flex;
+                justify-content: flex-start;
+                height: 80px;
+                z-index: 100;
+                width: 200px;
+                padding: 0 25px;
+            }
+
+            #navbar__logo{
+                margin: 0;
+            }
+
+            .navbar__menu {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(5, 100px);
+                justify-content: center;
+                margin: 0;
+                width: 100%;
+                position: absolute;
+                top:-1000px;
+                opacity: 0;
+                z-index: 1;
+                height: 93vh;
+                background: #131313;
+            }
+            
+            /*------AKTIVACE S JS -----*/
+            .navbar__menu.active {
+                top: 7vh;
+                opacity: 1;
+                transition: all 0.5 ease;
+                z-index: 99;
+                height: 93vh;
+                font-size: 1.6rem;
+                overflow: hidden;
+            }
+
+            /*---------HAMBURGER DIV-------*/
+            .navbar__toggle .bar {
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                background: #ffff;
+                display: block;
+                transition: all 0.2s ease;
+            }
+
+            .navbar__item {
+                width: 100vw;
+                height: 10vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .navbar__ref {
+                text-align: center;
+                padding: 2rem;
+                width: 30%;
+            }
+
+            /*---------HAMBURGER --------*/
+            #mobile-menu {
+                position: absolute;
+                top: 20%;
+                right: 5%;
+                cursor: pointer;
+            }
+            
+            /*-------MODE BUTTON---------*/
+            .modeButton{
+                display: flex;
+                justify-content: center;
+                width: 60px;
+                position: absolute;
+                top: 10px;
+                right: 150px;
+                margin: 0;
+                z-index: 100;
+            }
+
+            /*-------------JS---------*/
+            .modeButton.inMenu{
+                top: 80px;
+                right: 30px;
+            }
+
+            #mobile-menu.is-active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            #mobile-menu.is-active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            #mobile-menu.is-active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+
+
+
+
+
+            main{
+                width: 100vw;
+                height: 150vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .info{
+                width: 100%;
+                height: 50%;
+            }
+            .projects{
+                width: 100%;
+                height: 50%;
+                justify-items: center;
+                align-items: center;
+            }
+        }
+
+        @media only screen and (max-width: 1350px){
+            .info{
+                gap: 5rem;
+            }
+        }
+        @media only screen and (max-width: 440px){
+            
+            main{
+                width: 100vw;
+                height: 190vh;
+                display: flex;
+                flex-direction: column;
+            }
+            .caption{
+                font-size: 20vw;
+                margin-left: 1rem;
+            }
+
+            .text{
+                margin-left: 1rem;
+            }
+
+            .info{
+                padding-top: 5rem;
+                height: 40%;
+                padding-right: 2em;
+            }
+            .projects__container{
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-template-columns: auto;
+                margin: 0;
+                padding: 0;
+                
+            }
+            .projects{
+                height: 60%;
+                justify-items: start;
+                padding: 0;
+                margin: 0;
+            }
+            
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <nav class="navbar">
+            <div class="navbar__main">
+                <a href="/" id="navbar__logo">
+                    <div class="shelter"></div><div class="home"></div>
+                </a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__ref">HOME</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="skills.html" class="navbar__ref">SKILLS</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="projects.html" class="navbar__ref">PROJECTS</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="aboutme.html" class="navbar__ref">ABOUT ME</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="blog.html" class="navbar__ref">BLOG</a>
+                </li>
+            </ul>
+            <div class="modeButton">
+                DARK
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="info">
+            <div class="caption">My Projects</div>
+            <div class="text">
+                I will share my projects here, I have nothing here yet, just structure. 
+                But in the future I will insert them here and I will definitely attach a link to my gidhub.
+            </div>
+        </div>
+        <div class="projects">
+            <div class="projects__container">
+                <div class="card n1">
+                    <div class="card__caption">Project 1</div>
+                    <div class="card__separator"></div>
+                    <div class="card__text">
+                        This is the place for a short description of the project
+                    </div>
+                </div>
+                <div class="card n2">
+                    <div class="card__caption">Project 2</div>
+                    <div class="card__separator"></div>
+                    <div class="card__text">
+                        This is the place for a short description of the project
+                    </div>
+                </div>
+                <div class="card n3">
+                    <div class="card__caption">Project 3</div>
+                    <div class="card__separator"></div>
+                    <div class="card__text">
+                        This is the place for a short description of the project
+                    </div>
+                </div>
+                <div class="card n4">
+                    <div class="card__caption">Project 4</div>
+                    <div class="card__separator"></div>
+                    <div class="card__text">
+                        This is the place for a short description of the project
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>

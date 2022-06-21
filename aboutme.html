@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://api-ssps.cajthaml.eu/file/global/css/reset_ld9mrCCm.css">
+    <title>About me</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Arial', 'sans-serif';
+        }
+
+
+        .navbar {
+            width: 100%;
+            background-color: #131313;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 1.2em;
+            position: fixed;
+            top: 0px;
+            z-index: 100;
+        }
+
+        .navbar > .navbar__main {
+            display: flex;
+            justify-content: flex-start;
+            z-index: 1000;
+            width: 30%;
+            height: 80px;
+            padding: 0 50px;
+        }
+        
+        #navbar__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        #navbar__logo .shelter{
+            width: 0px;
+            height: 0px;
+
+            border-right: 20px solid transparent;
+            border-bottom: 20px #c0392b solid;
+            border-left: 20px solid transparent;
+        }
+
+        #navbar__logo .home{
+            width: 30px;
+            height: 20px;
+            background: #c0392b;
+        }
+
+        .navbar__menu {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            justify-content: center;
+            list-style: none;
+            text-align: center;
+            height: 80px;
+            transition: all 0.4s ease;
+        }
+
+        .navbar__item {
+            height: 100%;
+        }
+
+        .navbar__ref {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'calibri', sans-serif;
+            text-decoration: none;
+            padding: 0 1rem;
+            height: 100%;
+            font-weight: 900;
+        }
+
+        .modeButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5%;
+            height: 60px;
+            background:#3d3d3d;
+            color: black;
+            font-family: calibri, sans-serif;
+            border-radius: 4px;
+            margin: 0 10px 0 100px;
+            cursor: pointer;
+            transition: all 0.6s ease;
+        }
+
+
+        /*------------------------------MAIN------------------------------------*/
+        main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("images/skills2.png");
+            background-size: cover;
+            background-position: left;
+        }
+
+         .main__aboutMe{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 7rem;
+            padding: 7rem 3rem 3rem 3rem;
+
+        }
+        
+        .main__aboutMe > .caption{
+            width: 25rem;
+            height: 8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5em;
+            background-color: black;
+            color: white;
+        }
+
+        .main__aboutMe > .info{
+            width: 80%;
+            height: 70%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 1rem;
+            background-color: #706fd3;
+            flex-direction: column;
+            border-radius: 1.2rem;
+        }
+        .info > h2{
+            display: block;
+            width: 100%;
+            font-size: 3em;
+        }
+        .info > p{
+            font-size: 1.2em;
+            line-height: 1.3em;
+            text-align: justify;
+        }
+
+
+        .main__photo{
+            display: flex;
+            width: 50%;
+            height: 100%;
+            padding-top: 3rem;
+            background-color: #706fd3;
+            justify-content: center;
+            align-items: center;
+            transition: all 1s ease;
+        }
+        .main__photo > .firstLayer{
+            display: flex;
+            width: 80%;
+            height: 80%;
+            background-color: #ff5252;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2rem;
+            transition: all 1s ease;
+        }
+        .main__photo > .firstLayer > .secondLayer{
+            display: flex;
+            width: 70%;
+            height: 70%;
+            background-color: #5f27cd;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2rem;
+            transition: all 1s ease;
+        }
+        .main__photo > .firstLayer > .secondLayer > .photo{
+            width: 70%;
+            height: 70%;
+            background-image: url("images/ja.jpg");
+            border-radius: 2rem;
+            background-size: cover;
+            background-position: center -3rem;
+            transition: all 1s ease;
+        }
+
+        /*--------------HOVER-----------*/
+        .modeButton:hover {
+            background-color: #1e272e;
+            color: #3d3d3d;
+        }
+        .navbar__ref:hover {
+            color: #c0392b;
+            transition: all 1sec ease;
+            border-bottom: 4px solid #c0392b;
+        }
+        #navbar__logo:hover{
+            transform: scale(1.3,1.3);
+        }
+
+        .main__photo:hover{
+            background-color: rgba(0,0,0,0);
+            transition: all 1s ease;
+        }
+
+        .main__photo > .firstLayer:hover{
+            background-color: rgba(0,0,0,0);
+            transition: all 1s ease;
+        }
+        .main__photo > .firstLayer > .secondLayer:hover{
+            background-color: rgba(0,0,0,0);
+            transition: all 1s ease;
+        }
+        .main__photo > .firstLayer > .secondLayer > .photo:hover{
+            transform: scale(1.2);
+        }
+
+
+
+        @media only screen and (max-width: 960px){
+            .navbar > .navbar__main {
+                display: flex;
+                justify-content: flex-start;
+                height: 80px;
+                z-index: 100;
+                width: 200px;
+                padding: 0 25px;
+            }
+
+            #navbar__logo{
+                margin: 0;
+            }
+
+            .navbar__menu {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(5, 100px);
+                justify-content: center;
+                margin: 0;
+                width: 100%;
+                position: absolute;
+                top:-1000px;
+                opacity: 0;
+                z-index: 1;
+                height: 93vh;
+                background: #131313;
+            }
+            
+            /*------AKTIVACE S JS -----*/
+            .navbar__menu.active {
+                top: 7vh;
+                opacity: 1;
+                transition: all 0.5 ease;
+                z-index: 99;
+                height: 93vh;
+                font-size: 1.6rem;
+                overflow: hidden;
+            }
+
+            /*---------HAMBURGER DIV-------*/
+            .navbar__toggle .bar {
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                background: #ffff;
+                display: block;
+                transition: all 0.2s ease;
+            }
+
+            .navbar__item {
+                width: 100vw;
+                height: 10vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .navbar__ref {
+                text-align: center;
+                padding: 2rem;
+                width: 30%;
+            }
+
+            /*---------HAMBURGER --------*/
+            #mobile-menu {
+                position: absolute;
+                top: 20%;
+                right: 5%;
+                cursor: pointer;
+            }
+            
+            /*-------MODE BUTTON---------*/
+            .modeButton{
+                display: flex;
+                justify-content: center;
+                width: 60px;
+                position: absolute;
+                top: 10px;
+                right: 150px;
+                margin: 0;
+                z-index: 100;
+            }
+
+            /*-------------JS---------*/
+            .modeButton.inMenu{
+                top: 80px;
+                right: 30px;
+            }
+
+            #mobile-menu.is-active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            #mobile-menu.is-active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            #mobile-menu.is-active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+
+
+
+
+            main{
+                display: flex;
+                flex-direction: column;
+                height: 170vh;
+                width: 100vw;
+            }
+
+            .main__aboutMe{
+                width: 100%;
+                height: 50%;
+
+            }
+            .main__photo{
+                width: 100%;
+                height: 50%;
+            }
+            .main__photo > .firstLayer > .secondLayer > .photo{
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            .main__aboutMe > .info{
+                width: 100%;
+            }
+
+        }
+        @media only screen and (max-width: 450px){
+            main{
+                display: flex;
+                flex-direction: column;
+                height: 200vh;
+                width: 100vw;
+            }
+            .main__aboutMe > .caption{
+                width: 100%;
+                height: 20%;
+                font-size: 15vw;
+            }
+            .main__aboutMe{
+                height: 70%;
+            }
+            .main__photo{
+                height: 30%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <nav class="navbar">
+            <div class="navbar__main">
+                <a href="/" id="navbar__logo">
+                    <div class="shelter"></div><div class="home"></div>
+                </a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__ref">HOME</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="skills.html" class="navbar__ref">SKILLS</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="projects.html" class="navbar__ref">PROJECTS</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="aboutme.html" class="navbar__ref">ABOUT ME</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="blog.html" class="navbar__ref">BLOG</a>
+                </li>
+            </ul>
+            <div class="modeButton">
+                DARK
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main__aboutMe">
+            <div class="caption">About Me</div>
+            <div class="info">
+                <h2>HI</h2>
+                <p>My name is David, I'm from Czech republic and I live in Prague. I'm 17 years old and I study at
+                     school SSPŠaG in Prague. In school I learn programming, hardware, computer networking etc.,
+                    and newly in second grade I started learn about websites. I enjoy it and I plan to develop in that.
+                    And I enjoy a lot of other hobbies like making music, play the guitar, painting and sport.
+                </p>
+            </div>
+        </div>
+        <div class="main__photo">
+            <div class="firstLayer">
+                <div class="secondLayer">
+                    <div class="photo"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>

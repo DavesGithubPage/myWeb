@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://api-ssps.cajthaml.eu/file/global/css/reset_ld9mrCCm.css"
+    />
+    <title>My Skills</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Arial", "sans-serif";
+      }
+
+      .navbar {
+        width: 100%;
+        background-color: #131313;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.2em;
+        position: fixed;
+        top: 0px;
+        z-index: 100;
+      }
+
+      .navbar > .navbar__main {
+        display: flex;
+        justify-content: flex-start;
+        z-index: 1000;
+        width: 30%;
+        height: 80px;
+        padding: 0 50px;
+      }
+
+      #navbar__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 4px;
+        transition: all 0.2s ease;
+      }
+
+      #navbar__logo .shelter {
+        width: 0px;
+        height: 0px;
+
+        border-right: 20px solid transparent;
+        border-bottom: 20px #c0392b solid;
+        border-left: 20px solid transparent;
+      }
+
+      #navbar__logo .home {
+        width: 30px;
+        height: 20px;
+        background: #c0392b;
+      }
+
+      .navbar__menu {
+        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(5, 100px);
+        justify-content: center;
+        list-style: none;
+        text-align: center;
+        height: 80px;
+        transition: all 0.4s ease;
+      }
+
+      .navbar__item {
+        height: 100%;
+      }
+
+      .navbar__ref {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "calibri", sans-serif;
+        text-decoration: none;
+        padding: 0 1rem;
+        height: 100%;
+        font-weight: 900;
+      }
+
+      .modeButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 5%;
+        height: 60px;
+        background: #3d3d3d;
+        color: black;
+        font-family: calibri, sans-serif;
+        border-radius: 4px;
+        margin: 0 10px 0 100px;
+        cursor: pointer;
+        transition: all 0.6s ease;
+      }
+
+      /*-------------------------------------------MAIN-------------------------*/
+      main {
+        width: 100%;
+        background-color: #10ac84;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        overflow: hidden;
+      }
+
+      .caption {
+        width: 30%;
+        height: 20vh;
+        background-color: #131313;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5em;
+        margin-top: 8rem;
+        margin-bottom: 2rem;
+      }
+
+      .skill__info {
+        width: 100%;
+        display: grid;
+        gap: 2rem;
+        row-gap: 4rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        background-color: #10ac84;
+        padding: 2rem;
+      }
+
+      .info__card {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.527),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("images/skills3.jpg");
+        background-size: cover;
+        background-position: left;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-radius: 15px;
+        border: 5px solid #576574;
+        z-index: 10;
+      }
+
+      .bkg {
+        width: 97.5%;
+        height: 54%;
+        position: absolute;
+        border-radius: 15px;
+      }
+      .sus1 {
+        left: 1rem;
+        top: 17rem;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.527),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("images/bkgSkill.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .sus2 {
+        left: 1rem;
+        top: 42rem;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.527),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("images/bkgskill2.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .sus3 {
+        left: 1rem;
+        top: 67rem;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.527),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("images/bkgskills4.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .program {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      .web {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+      .network {
+        grid-column: 3/4;
+        grid-row: 3/4;
+      }
+
+      .card__caption {
+        font-size: 1.7em;
+      }
+      .separator {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        margin-top: 1rem;
+      }
+
+      .info__card > p {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        font-size: 1.2rem;
+        text-align: left;
+        line-height: 1.5rem;
+        margin-top: 1rem;
+        word-spacing: 1px;
+      }
+
+      /*--------------HOVER-----------*/
+      .modeButton:hover {
+        background-color: #1e272e;
+        color: #3d3d3d;
+      }
+      .navbar__ref:hover {
+        color: #c0392b;
+        transition: all 1sec ease;
+        border-bottom: 4px solid #c0392b;
+      }
+      #navbar__logo:hover {
+        transform: scale(1.3, 1.3);
+      }
+
+      @media only screen and (max-width: 960px) {
+        .navbar > .navbar__main {
+          display: flex;
+          justify-content: flex-start;
+          height: 80px;
+          z-index: 100;
+          width: 200px;
+          padding: 0 25px;
+        }
+
+        #navbar__logo {
+          margin: 0;
+        }
+
+        .navbar__menu {
+          display: grid;
+          grid-template-columns: 100%;
+          grid-template-rows: repeat(5, 100px);
+          justify-content: center;
+          margin: 0;
+          width: 100%;
+          position: absolute;
+          top: -1000px;
+          opacity: 0;
+          z-index: 1;
+          height: 93vh;
+          background: #131313;
+        }
+
+        /*------AKTIVACE S JS -----*/
+        .navbar__menu.active {
+          top: 7vh;
+          opacity: 1;
+          transition: all 0.5 ease;
+          z-index: 99;
+          height: 93vh;
+          font-size: 1.6rem;
+          overflow: hidden;
+        }
+
+        /*---------HAMBURGER DIV-------*/
+        .navbar__toggle .bar {
+          width: 25px;
+          height: 3px;
+          margin: 5px auto;
+          background: #ffff;
+          display: block;
+          transition: all 0.2s ease;
+        }
+
+        .navbar__item {
+          width: 100vw;
+          height: 10vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .navbar__ref {
+          text-align: center;
+          padding: 2rem;
+          width: 30%;
+        }
+
+        /*---------HAMBURGER --------*/
+        #mobile-menu {
+          position: absolute;
+          top: 20%;
+          right: 5%;
+          cursor: pointer;
+        }
+
+        /*-------MODE BUTTON---------*/
+        .modeButton {
+          display: flex;
+          justify-content: center;
+          width: 60px;
+          position: absolute;
+          top: 10px;
+          right: 150px;
+          margin: 0;
+          z-index: 100;
+        }
+
+        /*-------------JS---------*/
+        .modeButton.inMenu {
+          top: 80px;
+          right: 30px;
+        }
+
+        #mobile-menu.is-active .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        #mobile-menu.is-active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        #mobile-menu.is-active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .program {
+          grid-column: 1/3;
+          grid-row: 1/2;
+        }
+        .web {
+          grid-column: 1/3;
+          grid-row: 2/3;
+        }
+        .network {
+          grid-column: 1/3;
+          grid-row: 3/4;
+        }
+
+        .bkg {
+          height: 40%;
+        }
+
+        .sus1 {
+          left: 1rem;
+          top: 40%;
+        }
+
+        .sus2 {
+          left: 1rem;
+          top: 83%;
+        }
+
+        .sus3 {
+          left: 1rem;
+          top: 126%;
+        }
+      }
+
+      @media only screen and (max-width: 780px) {
+        .program {
+          grid-column: 1/4;
+          grid-row: 1/2;
+        }
+        .web {
+          grid-column: 1/4;
+          grid-row: 2/3;
+        }
+        .network {
+          grid-column: 1/4;
+          grid-row: 3/4;
+        }
+
+        .bkg {
+          height: 25%;
+        }
+
+        .sus1 {
+          left: 1rem;
+          top: 40%;
+        }
+
+        .sus2 {
+          left: 1rem;
+          top: 83%;
+        }
+
+        .sus3 {
+          left: 1rem;
+          top: 126%;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .caption {
+          width: 30%;
+          height: 20vh;
+          background-color: #131313;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 12vw;
+          margin-left: 2rem;
+          
+        }
+
+        .bkg {
+          height: 0%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar__main">
+          <a href="/" id="navbar__logo">
+            <div class="shelter"></div>
+            <div class="home"></div>
+          </a>
+          <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="/" class="navbar__ref">HOME</a>
+          </li>
+          <li class="navbar__item">
+            <a href="skills.html" class="navbar__ref">SKILLS</a>
+          </li>
+          <li class="navbar__item">
+            <a href="projects.html" class="navbar__ref">PROJECTS</a>
+          </li>
+          <li class="navbar__item">
+            <a href="aboutme.html" class="navbar__ref">ABOUT ME</a>
+          </li>
+          <li class="navbar__item">
+            <a href="blog.html" class="navbar__ref">BLOG</a>
+          </li>
+        </ul>
+        <div class="modeButton">DARK</div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="caption">My Skills</div>
+      <div class="skill__info">
+        <div class="info__card program">
+          <div class="card__caption">PROGRAMMING</div>
+          <div class="separator"></div>
+          <p>
+            I started learning programming in my first year of high school. I
+            write in C#. I learned to work in a console and WPF and in the
+            second year of OOP - Object-Oriented Programming. It includes
+            classes, inheritance, constructors, various methods and interfacies
+          </p>
+        </div>
+        <div class="info__card web">
+          <div class="card__caption">WEBSITES</div>
+          <div class="separator"></div>
+          <p>
+            I started creating websites this school year. I learned to make a
+            modern website using a flexbox and grid, designing pages in
+            Bootstrap, responsiveness, editing using JavaScript with the use of
+            events and animations.
+          </p>
+        </div>
+        <div class="info__card network">
+          <div class="card__caption">COMPUTER NETWORKING</div>
+          <div class="separator"></div>
+          <p>
+            So far, I have only worked on Packet Tracer, which is program for
+            virtual networks. There are various virtual networking devices and a
+            command line. While working in Packet Tracer, I learned how to
+            create VLAN, DHCP, RIP, Static Routing, OSPF, Access List and
+            Virtual Ports.
+          </p>
+        </div>
+        <div class="bkg sus1"></div>
+        <div class="bkg sus2"></div>
+        <div class="bkg sus3"></div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://api-ssps.cajthaml.eu/file/global/css/reset_ld9mrCCm.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/0fb88b33a1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Arial", "sans-serif";
+      }
+
+      .navbar {
+        width: 100%;
+        background-color: #131313;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.2em;
+        position: fixed;
+        top: 0px;
+        z-index: 100;
+      }
+
+      .navbar > .navbar__main {
+        display: flex;
+        justify-content: flex-start;
+        z-index: 1000;
+        width: 30%;
+        height: 80px;
+        padding: 0 50px;
+      }
+
+      #navbar__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 4px;
+        transition: all 0.2s ease;
+      }
+
+      #navbar__logo .shelter {
+        width: 0px;
+        height: 0px;
+
+        border-right: 20px solid transparent;
+        border-bottom: 20px #c0392b solid;
+        border-left: 20px solid transparent;
+      }
+
+      #navbar__logo .home {
+        width: 30px;
+        height: 20px;
+        background: #c0392b;
+      }
+
+      .navbar__menu {
+        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(5, 100px);
+        justify-content: center;
+        list-style: none;
+        text-align: center;
+        height: 80px;
+        transition: all 0.4s ease;
+      }
+
+      .navbar__item {
+        height: 100%;
+      }
+
+      .navbar__ref {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "calibri", sans-serif;
+        text-decoration: none;
+        padding: 0 1rem;
+        height: 100%;
+        font-weight: 900;
+      }
+
+      .modeButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 5%;
+        height: 60px;
+        background: #3d3d3d;
+        color: black;
+        font-family: calibri, sans-serif;
+        border-radius: 4px;
+        margin: 0 10px 0 100px;
+        cursor: pointer;
+        transition: all 0.6s ease;
+      }
+
+      /*---------------MAIN-------------------------------------------------------------*/
+      main {
+        display: grid;
+        grid-template-columns: 0.8fr 1fr 1fr;
+        grid-template-rows: 50vh 40vh 40vh;
+        background-color: black;
+      }
+
+      .article__upside {
+        grid-column: 2/4;
+        background-color: black;
+      }
+
+      .article__upside > .lamp {
+        width: 700px;
+        height: 500px;
+        position: absolute;
+        top: 20%;
+        right: 10%;
+      }
+      .lamp > .lamp__base {
+        width: 5rem;
+        height: 6rem;
+        background-color: #192a56;
+        border-radius: 50% 50% 0 0;
+        border: 10px solid #706fd3;
+        transform: translate(33rem, 23rem);
+      }
+      .lamp > .lamp__rod {
+        width: 1rem;
+        height: 22rem;
+        background-color: #192a56;
+        transform: translate(35rem, 0rem);
+      }
+      .lamp > .lamp__boundRod {
+        width: 8rem;
+        height: 4rem;
+        transform: translate(28rem, -25rem);
+        border-top: 1rem solid #192a56;
+        border-right: 1rem solid #192a56;
+        border-radius: 10px 30px 0 0;
+      }
+
+      .lamp > .lamp__bar {
+        position: relative;
+        width: 1rem;
+        height: 3rem;
+        background-color: #192a56;
+        top: -29rem;
+        left: 27.4rem;
+        transform: rotate(30deg);
+        border-radius: 10px 0 0 0;
+      }
+
+      .lamp > .lamp__head {
+        position: relative;
+        width: 3rem;
+        height: 1.5rem;
+        background-color: #192a56;
+        top: -30rem;
+        left: 24.8rem;
+        transform: rotate(10deg);
+        border-radius: 200% 50% 10px 10px;
+      }
+
+      .lamp > .lamp__light {
+        width: 15rem;
+        height: 20rem;
+        background-color: #ce9f11;
+        clip-path: polygon(41% 0, 58% 0, 92% 100%, 4% 100%);
+        position: relative;
+        top: -30rem;
+        left: 14rem;
+        transform: rotate(25deg);
+        color: #ce9f11;
+        transition: background-color 0.4s ease;
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 5rem;
+      }
+      .lamp > .lamp__light > span {
+        transform: rotate(-25deg);
+      }
+
+      .lamp__bkg {
+        width: 18rem;
+        height: 25rem;
+        position: absolute;
+        top: 0rem;
+        left: 24rem;
+        transition: all 0.5s ease;
+        border: 2px solid white;
+        background-image: url("images/redMoon.jpg");
+        background-size: cover;
+        background-position: center -7rem;
+      }
+      /*----LEVÁ STRANA------*/
+      .article__leftside {
+        grid-row: 1/4;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        color: white;
+        margin-top: 45%;
+        padding-left: 40%;
+        z-index: 2;
+      }
+
+      h1 {
+        font-size: 6em;
+        margin-right: -25rem;
+      }
+      h2 {
+        font-size: 1.3em;
+        margin-right: -20rem;
+      }
+
+      .communacation__btn {
+        width: 20rem;
+        height: 4rem;
+        background-color: #c0392b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+
+      .communacation__btn > a {
+        text-decoration: none;
+        color: white;
+        font-family: "Arial", "sans-serif";
+        font-size: 1em;
+      }
+
+      .motiv {
+        width: 28rem;
+        height: 34rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        top: 5rem;
+        left: 0rem;
+        padding: 2rem;
+      }
+      .motiv__photo {
+        width: 70%;
+        height: 80%;
+        background-color: black;
+        background-image: url("images/nightBkg.jpg");
+        border: white 2px solid;
+        background-position: center;
+        background-size: cover;
+        transition: filter 0.4s ease;
+      }
+      .motiv > p {
+        position: absolute;
+        display: block;
+        color: #2e86de;
+        font-size: 1.5em;
+        width: 12rem;
+        height: 5rem;
+        font-weight: 900;
+        z-index: -2;
+        transition: font-size 0.2s ease;
+      }
+
+      /*-------------PRAVÁ STRANA------------*/
+      .article__rightside {
+        grid-row: 2/4;
+        grid-column: 2/4;
+        background-color: #c0392b;
+        border-radius: 40px 0 0 40px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        color: #706fd3;
+        font-size: 6em;
+      }
+      .article__rightside > span {
+        margin-bottom: -4rem;
+        z-index: 2;
+        text-decoration: line-through #c0392b;
+      }
+
+      /*------------------------FOOTER---------------------------------------*/
+      footer {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        background-color: black;
+        flex-direction: column;
+      }
+
+      .footer__fun {
+        width: 100%;
+        height: 70%;
+        background-color: black;
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.5fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 3em;
+        padding: 6rem 4rem 4rem 4rem;
+      }
+
+      .game {
+        background-color: white;
+        border-radius: 10px;
+        border: 5px solid #2e86de;
+        transition: all 0.2s ease;
+      }
+
+      .pacman {
+        grid-column: 2/3;
+        background-image: url("images/pacman.jpg");
+        background-size: cover;
+        background-position: center;
+        transform: translate(0rem, 1rem);
+      }
+      .tetris {
+        grid-row: 1/3;
+        grid-column: 3/4;
+        background-image: url("images/tetris.jpg");
+        background-size: cover;
+        background-position: center 5rem;
+        transform: translate(1rem, 2rem);
+      }
+      .flappyBird {
+        background-image: url("images/flappyBird.png");
+        background-size: cover;
+        background-position: center -2rem;
+        transform: translate(-2rem, 1rem);
+      }
+      .Dino {
+        background-image: url("images/Dino.jpg");
+        background-size: cover;
+        background-position: center -3rem;
+        transform: translate(-1rem, 1rem);
+      }
+
+      #footer__article {
+        width: 100%;
+        height: 30%;
+        background-color: #c0392b;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 0rem;
+      }
+
+      .footer__section {
+        width: 18%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        font-family: "Arial", "sans-serif";
+        color: black;
+      }
+
+      .footer__section > .footer__caption {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      .footer__section > ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        font-weight: 700;
+        font-size: 0.8em;
+        gap: 1em;
+      }
+
+      .footer__section > ul > li > a {
+        text-decoration: none;
+        color: black;
+      }
+
+      /*------------HOVER--------*/
+      .modeButton:hover {
+        background-color: #1e272e;
+        color: #3d3d3d;
+      }
+      .navbar__ref:hover {
+        color: #c0392b;
+        transition: all 1sec ease;
+        border-bottom: 4px solid #c0392b;
+      }
+      #navbar__logo:hover {
+        transform: scale(1.3, 1.3);
+      }
+      .lamp > .lamp__light:hover {
+        background-color: #ffc000;
+      }
+      .motiv__photo:hover {
+        transition: filter 0.4s ease;
+        filter: blur(3px) grayscale(100%);
+        font-size: 1.5em;
+      }
+
+      .game:hover {
+        transform: scale(1.05);
+      }
+
+      .motiv > p {
+        z-index: 2;
+      }
+
+      /* .lamp > .lamp__bkg:hover{
+            border: 2px solid white;
+            background-image: url("images/redMoon.jpg");
+            background-size: cover;
+            background-position: center -7rem;
+        } */
+
+      /*----------------------JS ACTIVE------------*/
+
+      .lamp__bkgActive {
+        border: 2px solid white;
+        background-image: url("images/redMoon.jpg");
+        background-size: cover;
+        background-position: center -7rem;
+      }
+
+      @media only screen and (max-width: 960px) {
+        .navbar > .navbar__main {
+          display: flex;
+          justify-content: flex-start;
+          height: 80px;
+          z-index: 100;
+          width: 200px;
+          padding: 0 25px;
+        }
+
+        #navbar__logo {
+          margin: 0;
+        }
+
+        .navbar__menu {
+          display: grid;
+          grid-template-columns: 100%;
+          grid-template-rows: repeat(5, 100px);
+          justify-content: center;
+          margin: 0;
+          width: 100%;
+          position: absolute;
+          top: -1000px;
+          opacity: 0;
+          z-index: 1;
+          height: 93vh;
+          background: #131313;
+        }
+
+        /*------AKTIVACE S JS -----*/
+        .navbar__menu.active {
+          top: 7vh;
+          opacity: 1;
+          transition: all 0.5 ease;
+          z-index: 99;
+          height: 93vh;
+          font-size: 1.6rem;
+          overflow: hidden;
+        }
+
+        /*---------HAMBURGER DIV-------*/
+        .navbar__toggle .bar {
+          width: 25px;
+          height: 3px;
+          margin: 5px auto;
+          background: #ffff;
+          display: block;
+          transition: all 0.2s ease;
+        }
+
+        .navbar__item {
+          width: 100vw;
+          height: 10vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .navbar__ref {
+          text-align: center;
+          padding: 2rem;
+          width: 30%;
+        }
+
+        /*---------HAMBURGER --------*/
+        #mobile-menu {
+          position: absolute;
+          top: 20%;
+          right: 5%;
+          cursor: pointer;
+        }
+
+        /*-------MODE BUTTON---------*/
+        .modeButton {
+          display: flex;
+          justify-content: center;
+          width: 60px;
+          position: absolute;
+          top: 10px;
+          right: 150px;
+          margin: 0;
+          z-index: 100;
+        }
+
+        /*-------------JS---------*/
+        .modeButton.inMenu {
+          top: 80px;
+          right: 30px;
+        }
+
+        #mobile-menu.is-active .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        #mobile-menu.is-active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        #mobile-menu.is-active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+
+        main {
+          display: grid;
+          grid-template-columns: 0.8fr 1fr 1fr;
+          grid-template-rows: 50vh 70vh 70vh;
+          background-color: black;
+        }
+        .article__leftside {
+          padding-left: 2rem;
+        }
+        .motiv {
+          width: 120%;
+          height: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          position: relative;
+          top: 30rem;
+          left: -3rem;
+          padding: 2rem;
+        }
+        .article__upside > .lamp {
+          width: 700px;
+          height: 500px;
+          position: absolute;
+          top: 60%;
+          right: 10%;
+          z-index: 30;
+        }
+        .article__rightside > span {
+          font-size: 6vw;
+          margin-right: 5rem;
+        }
+
+        #footer__article {
+          gap: 5rem;
+        }
+
+        footer {
+          height: 120vh;
+        }
+        .footer__fun {
+          width: 100%;
+          height: 70%;
+          background-color: black;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 3em;
+          padding: 6rem 4rem 4rem 4rem;
+        }
+        .pacman {
+          grid-column: 1/2;
+          background-image: url("images/pacman.jpg");
+          background-size: cover;
+          background-position: center;
+          transform: translate(0rem, 0rem);
+        }
+        .tetris {
+          grid-row: 2/3;
+          grid-column: 1/2;
+          background-image: url("images/tetris.jpg");
+          background-size: cover;
+          background-position: center 5rem;
+          transform: translate(0rem, 0rem);
+        }
+        .flappyBird {
+          background-image: url("images/flappyBird.png");
+          background-size: cover;
+          background-position: center -2rem;
+          transform: translate(0rem, 0rem);
+        }
+        .Dino {
+          background-image: url("images/Dino.jpg");
+          background-size: cover;
+          background-position: center -3rem;
+          transform: translate(0rem, 0rem);
+        }
+
+        h1 {
+          font-size: 12vw;
+          margin-right: -25rem;
+        }
+        h2 {
+          font-size: 3vw;
+          margin-right: -20rem;
+        }
+
+        .footer__section > .footer__caption {
+          font-size: 2.5vw;
+          font-weight: 700;
+        }
+        .footer__section > ul {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          text-align: left;
+          font-weight: 700;
+          font-size: 2vw;
+          gap: 1em;
+        }
+      }
+
+      @media only screen and (max-width: 590px) {
+        .article__upside > .lamp {
+          width: 50%;
+          height: 80%;
+          top: 50%;
+          left: 0%;
+        }
+        .motiv {
+          width: 100%;
+          height: 35%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          position: relative;
+          top: 30rem;
+          left: -3rem;
+          padding: 2rem;
+        }
+
+        .motiv__photo {
+          width: 70%;
+          height: 80%;
+          background-color: black;
+          background-image: url("images/nightBkg.jpg");
+          border: white 2px solid;
+          background-position: center;
+          background-size: cover;
+          transition: filter 0.4s ease;
+        }
+        .motiv > p {
+          position: absolute;
+          display: block;
+          color: #2e86de;
+          font-size: 3vw;
+          width: 40%;
+          height: 35%;
+          font-weight: 900;
+          z-index: 2;
+          transition: font-size 0.2s ease;
+        }
+
+
+
+
+        .lamp > .lamp__base {
+          width: 30%;
+          height: 15%;
+          background-color: #192a56;
+          border-radius: 50% 50% 0 0;
+          border: 10px solid #706fd3;
+          transform: translate(250%, 470%);
+        }
+        .lamp > .lamp__rod {
+          width: 6%;
+          height: 22rem;
+          background-color: #192a56;
+          transform: translate(1450%, 0%);
+        }
+        .lamp > .lamp__boundRod {
+          width: 49%;
+          height: 10%;
+          transform: translate(89%, -700%);
+          border-top: 1rem solid #192a56;
+          border-right: 1rem solid #192a56;
+          border-radius: 10px 30px 0 0;
+        }
+
+        .lamp > .lamp__bar {
+          width: 6%;
+          height: 10%;
+          background-color: #192a56;
+          transform: rotate(30deg) translate(-1650%, 330%);
+          border-radius: 10px 0 0 0;
+        }
+
+        .lamp > .lamp__head {
+          width: 20%;
+          height: 4%;
+          background-color: #192a56;
+          transform: rotate(10deg) translate(-600%, 350%);
+          border-radius: 200% 50% 10px 10px;
+        }
+
+        .lamp > .lamp__light {
+          width: 70%;
+          height: 50%;
+          background-color: #ce9f11;
+          clip-path: polygon(41% 0, 58% 0, 92% 100%, 4% 100%);
+          transform: rotate(0deg) translate( -110%, 20%);
+          color: #ce9f11;
+          transition: background-color 0.4s ease;
+          font-size: 2em;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          padding-bottom: 5rem;
+        }
+        .lamp > .lamp__light > span {
+          transform: rotate(-25deg);
+        }
+
+        .lamp__bkg {
+          width: 80%;
+          height: 80%;
+          position: absolute;
+          top: 0rem;
+          left: 5%;
+          transition: all 0.5s ease;
+          border: 2px solid white;
+          background-image: url("images/redMoon.jpg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar__main">
+          <a href="/" id="navbar__logo">
+            <div class="shelter"></div>
+            <div class="home"></div>
+          </a>
+          <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="/" class="navbar__ref">HOME</a>
+          </li>
+          <li class="navbar__item">
+            <a href="skills.html" class="navbar__ref">SKILLS</a>
+          </li>
+          <li class="navbar__item">
+            <a href="projects.html" class="navbar__ref">PROJECTS</a>
+          </li>
+          <li class="navbar__item">
+            <a href="aboutme.html" class="navbar__ref">ABOUT ME</a>
+          </li>
+          <li class="navbar__item">
+            <a href="blog.html" class="navbar__ref">BLOG</a>
+          </li>
+        </ul>
+        <div class="modeButton">DARK</div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="article__upside">
+        <div class="lamp">
+          <div class="lamp__bkg"></div>
+          <div class="lamp__base"></div>
+          <div class="lamp__rod"></div>
+          <div class="lamp__boundRod"></div>
+          <div class="lamp__bar"></div>
+          <div class="lamp__head"></div>
+          <div class="lamp__light"><span>LIGHT!</span></div>
+        </div>
+      </div>
+
+      <div class="article__leftside">
+        <h1>HI I'M DAVID</h1>
+        <h2>student at the prestigious school SSPŠaG in Prague</h2>
+        <div class="communacation__btn">
+          <a href="#footer__article">LETS TALK</a>
+        </div>
+
+        <div class="motiv">
+          <p>This site was created by inspiration for a Japanese motif</p>
+          <div class="motiv__photo"></div>
+        </div>
+      </div>
+
+      <div class="article__rightside"><span>PLAY GAMES!</span></div>
+    </main>
+
+    <footer>
+      <div class="footer__fun">
+        <div class="game pacman"></div>
+        <div class="game tetris"></div>
+        <div class="game flappyBird"></div>
+        <div class="game Dino"></div>
+      </div>
+      <div id="footer__article">
+        <div class="footer__section">
+          <p class="footer__caption">About Me</p>
+          <ul>
+            <li><a href="aboutme.html">READ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <p class="footer__caption">Contact Me</p>
+          <ul>
+            <li>EMAIL: dave.jurkevic@gmail.com</li>
+            <li>TEL: +420 773118737</li>
+            <li>DISCORD: Dejv#3089</li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <p class="footer__caption">Social Media</p>
+          <ul>
+            <li>INSTAGRAM: @davidjurkevic</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
